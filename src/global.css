@@ -1,68 +1,42 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+:root {
+  --BLUE-700: #1e6f9f;
+  --BLUE-300: #4ea8de;
+
+  --PURPLE-600: #5e60ce;
+  --PURPLE-300: #8284fa;
+
+  --GRAY-700: #0d0d0d;
+  --GRAY-600: #1a1a1a;
+  --GRAY-500: #262626;
+  --GRAY-400: #333333;
+  --GRAY-300: #808080;
+  --GRAY-200: #d9d9d9;
+  --GRAY-100: #f2f2f2;
+
+  --RED: #e25858;
 }
-a:hover {
-  color: #535bf2;
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 1px var(--PURPLE-600);
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--GRAY-700);
+  font-size: 1rem;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body,
+input,
+p {
+  font-family: "Inter", sans-serif;
+  color: var(--GRAY-100);
 }
