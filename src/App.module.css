@@ -1,0 +1,27 @@
+.wrapper {
+  max-width: 46rem;
+  margin: 4.5rem auto 0;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+header .brand {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+header .brand span:nth-child(1) {
+  color: var(--BLUE-300);
+}
+
+header .brand span:nth-child(2) {
+  color: var(--PURPLE-600);
+}
