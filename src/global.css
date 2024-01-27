@@ -30,7 +30,7 @@
 }
 
 body {
-  background-color: var(--GRAY-700);
+  background: var(--GRAY-600);
   font-size: 1rem;
 }
 

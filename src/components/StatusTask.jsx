@@ -4,7 +4,7 @@ export function StatusTask() {
   return (
     <>
       <div className={style.taskCreated}>
-        <span>Concluída</span>
+        <span>Tarefa concluída</span>
         <span className={style.taskCount}>0</span>
       </div>
 

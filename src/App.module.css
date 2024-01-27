@@ -1,13 +1,14 @@
 .wrapper {
-  height: 100vh;
   display: grid;
   grid-template-rows: 12.5rem 1fr;
 }
 
-header {
+.wrapper > header {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background: var(--GRAY-700);
 }
 
 .wrapperHeader {
@@ -27,10 +28,6 @@ header .brand span:nth-child(1) {
 
 header .brand span:nth-child(2) {
   color: var(--PURPLE-600);
-}
-
-main {
-  background-color: var(--GRAY-600);
 }
 
 .content {
