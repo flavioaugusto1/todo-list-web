@@ -1,13 +1,16 @@
 .wrapper {
-  max-width: 46rem;
-  margin: 4.5rem auto 0;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 12.5rem 1fr;
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapperHeader {
   display: flex;
   align-items: flex-end;
   gap: 0.75rem;
@@ -24,4 +27,73 @@ header .brand span:nth-child(1) {
 
 header .brand span:nth-child(2) {
   color: var(--PURPLE-600);
+}
+
+main {
+  background-color: var(--GRAY-600);
+}
+
+.content {
+  max-width: 46rem;
+  margin: -2.3rem auto;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 0.5rem;
+}
+
+form {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+form input {
+  flex: 1;
+  padding: 1rem;
+  background-color: var(--GRAY-500);
+  border: none;
+  border: 1px solid var(--GRAY-700);
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+form input:focus {
+  border: 1px solid var(--PURPLE-600);
+}
+
+form button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--BLUE-700);
+  color: var(--GRAY-100);
+
+  transition: background 0.6s;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: var(--BLUE-300);
+}
+
+form button span {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.contentTasks header {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 1.5rem;
 }

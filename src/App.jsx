@@ -1,12 +1,14 @@
 import "./global.css";
 import style from "./App.module.css";
 import Rocket from "./assets/rocket.svg";
+import { PlusCircle } from "@phosphor-icons/react";
+import { StatusTask } from "./components/StatusTask";
 
 function App() {
   return (
-    <div>
-      <div className={style.wrapper}>
-        <header>
+    <div className={style.wrapper}>
+      <header>
+        <div className={style.wrapperHeader}>
           <div>
             <img src={Rocket} alt="imagem de um foguete roxo decolando" />
           </div>
@@ -14,11 +16,30 @@ function App() {
             <span>to</span>
             <span>do</span>
           </div>
-        </header>
-        <main>
-            
-        </main>
-      </div>
+        </div>
+      </header>
+      <main>
+        <div className={style.content}>
+          <form>
+            <input
+              type="text"
+              name="newTask"
+              id="newTask"
+              placeholder="Adicione uma tarefa"
+            />
+            <button type="submit">
+              <span>Criar</span>
+              <PlusCircle size={22} weight="bold" />
+            </button>
+          </form>
+
+          <div className={style.contentTasks}>
+            <header>
+              <StatusTask />
+            </header>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.taskCreated,
+.taskFinished {
+  display: flex;
+  gap: 0.5rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.taskCreated span:nth-child(1) {
+  color: var(--BLUE-300);
+}
+
+.taskFinished span:nth-child(1) {
+  color: var(--PURPLE-300);
+}
+
+.taskCount {
+  background: var(--GRAY-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 50%;
+}
