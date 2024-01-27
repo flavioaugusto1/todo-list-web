@@ -3,6 +3,7 @@ import style from "./App.module.css";
 import Rocket from "./assets/rocket.svg";
 import { PlusCircle } from "@phosphor-icons/react";
 import { StatusTask } from "./components/StatusTask";
+import { Task } from "./components/Task";
 
 function App() {
   return (
@@ -37,6 +38,13 @@ function App() {
             <header>
               <StatusTask />
             </header>
+
+            <section>
+              <Task />
+              <Task />
+              <Task />
+              <Task />
+            </section>
           </div>
         </div>
       </main>

@@ -94,3 +94,7 @@ form button span {
 
   margin-bottom: 1.5rem;
 }
+
+.contentTasks article + article {
+  margin-top: 0.75rem;
+}
