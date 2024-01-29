@@ -19,9 +19,12 @@ function App() {
     setTask([...task, newTask]);
   }
 
-  function handleDeleteTask(task: string) {
-    console.log(task)
+  function handleDeleteTask(item: string) {
+    const withoutDeletedTask = task.filter((task) => task !== item);
+    setTask(withoutDeletedTask);
   }
+
+  const numberOfTaskCreated = task.length;
 
   return (
     <div className={style.wrapper}>
@@ -54,12 +57,18 @@ function App() {
 
           <div className={style.contentTasks}>
             <header>
-              <StatusTask />
+              <StatusTask createdTask={numberOfTaskCreated} />
             </header>
 
             <section>
               {task.map((item) => {
-                return <Task key={item} content={item} onDeleteTask={handleDeleteTask} />;
+                return (
+                  <Task
+                    key={item}
+                    content={item}
+                    onDeleteTask={handleDeleteTask}
+                  />
+                );
               })}
             </section>
           </div>
