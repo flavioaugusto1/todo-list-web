@@ -16,6 +16,13 @@ function App() {
 
   function handleNewTask(event: FormEvent) {
     event.preventDefault();
+
+    for (const item of task) {
+      if (item === newTask) {
+        return alert("A tarefa que está cadastrando já existe.");
+      }
+    }
+
     setTask([...task, newTask]);
   }
 

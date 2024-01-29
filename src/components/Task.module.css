@@ -60,6 +60,7 @@
   font-size: 0.875rem;
   line-height: 1.4;
   color: var(--GRAY-100);
+  flex: 1;
 }
 
 .taskContainer button {

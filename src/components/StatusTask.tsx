@@ -15,7 +15,9 @@ export function StatusTask({ createdTask }: StatusTask) {
 
       <div className={style.taskFinished}>
         <span>Concluída</span>
-        <span className={style.taskCount}>0</span>
+        <span className={style.taskCount}>
+          {createdTask === 0 ? 0 : `${0} de ${createdTask}`}
+        </span>
       </div>
     </>
   );
