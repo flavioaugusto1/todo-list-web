@@ -5,7 +5,7 @@ interface StatusTask {
   finishedTask: number;
 }
 
-export function StatusTask({ createdTask }: StatusTask) {
+export function StatusTask({ createdTask, finishedTask }: StatusTask) {
   return (
     <>
       <div className={style.taskCreated}>
@@ -16,7 +16,7 @@ export function StatusTask({ createdTask }: StatusTask) {
       <div className={style.taskFinished}>
         <span>Concluída</span>
         <span className={style.taskCount}>
-          {createdTask === 0 ? 0 : `${0} de ${createdTask}`}
+          {createdTask === 0 ? 0 : `${finishedTask} de ${createdTask}`}
         </span>
       </div>
     </>

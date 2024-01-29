@@ -9,6 +9,7 @@ import { useState, ChangeEvent, FormEvent } from "react";
 function App() {
   const [newTask, setNewTask] = useState<string>("");
   const [task, setTask] = useState<string[]>([]);
+  const [doneTask, setDoneTask] = useState<string[]>([]);
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTask(event.target.value);
@@ -29,6 +30,29 @@ function App() {
   function handleDeleteTask(item: string) {
     const withoutDeletedTask = task.filter((task) => task !== item);
     setTask(withoutDeletedTask);
+
+    const newFinishedTasks = doneTask.filter((task) => {
+      const filteredTask = task !== item;
+      return filteredTask;
+    });
+
+    setDoneTask(newFinishedTasks);
+  }
+
+  function handleDoneTask(taskFinished: string) {
+    const verifyIfTaskIsFinished = doneTask.includes(taskFinished);
+
+    if (!verifyIfTaskIsFinished) {
+      setDoneTask([...doneTask, taskFinished]);
+      return;
+    }
+
+    const newFinishedTasks = doneTask.filter((task) => {
+      const filteredTask = task !== taskFinished;
+      return filteredTask;
+    });
+
+    setDoneTask(newFinishedTasks);
   }
 
   const numberOfTaskCreated = task.length;
@@ -64,7 +88,10 @@ function App() {
 
           <div className={style.contentTasks}>
             <header>
-              <StatusTask createdTask={numberOfTaskCreated} />
+              <StatusTask
+                createdTask={numberOfTaskCreated}
+                finishedTask={doneTask.length}
+              />
             </header>
 
             <section>
@@ -74,6 +101,7 @@ function App() {
                     key={item}
                     content={item}
                     onDeleteTask={handleDeleteTask}
+                    onDoneTask={handleDoneTask}
                   />
                 );
               })}
