@@ -25,6 +25,7 @@ function App() {
     }
 
     setTask([...task, newTask]);
+    setNewTask("");
   }
 
   function handleDeleteTask(item: string) {
@@ -78,6 +79,7 @@ function App() {
               name="newTask"
               id="newTask"
               placeholder="Adicione uma tarefa"
+              value={newTask}
               onChange={handleNewTaskChange}
             />
             <button type="submit" onClick={handleNewTask}>
