@@ -1,15 +1,21 @@
 import style from "./Task.module.css";
 import { Trash } from "@phosphor-icons/react";
 
-export function Task() {
+interface TaskProps {
+  content: string;
+  onDeleteTask: (task: string) => void;
+}
+
+export function Task({ content, onDeleteTask }: TaskProps) {
+  function handleDeleteTask(task: string) {
+    onDeleteTask(task);
+  }
+
   return (
     <article className={style.taskContainer}>
       <input type="checkbox" name="doneTask" id="doneTask" />
-      <p>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
-      </p>
-      <button>
+      <p>{content}</p>
+      <button onClick={() => handleDeleteTask(content)}>
         <Trash size={18} />
       </button>
     </article>
