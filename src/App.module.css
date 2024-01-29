@@ -95,6 +95,28 @@ form button span {
   margin-bottom: 1.5rem;
 }
 
+.emptyTask {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  border-top: 1px solid var(--GRAY-400);
+  border-radius: 8px;
+
+  padding: 5.3rem 1.5rem;
+}
+
+.emptyTask svg,
+strong,
+p {
+  color: var(--GRAY-300);
+}
+
+.emptyTextDescription p {
+  text-align: center;
+}
+
 .contentTasks ul {
   max-height: 35rem;
   overflow-y: auto;

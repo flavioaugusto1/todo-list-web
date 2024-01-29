@@ -1,7 +1,7 @@
 import "./global.css";
 import style from "./App.module.css";
 import Rocket from "./assets/rocket.svg";
-import { PlusCircle } from "@phosphor-icons/react";
+import { PlusCircle, Clipboard } from "@phosphor-icons/react";
 import { StatusTask } from "./components/StatusTask";
 import { Task } from "./components/Task";
 import { useState, ChangeEvent, FormEvent } from "react";
@@ -78,7 +78,7 @@ function App() {
               type="text"
               name="newTask"
               id="newTask"
-              placeholder="Adicione uma tarefa"
+              placeholder="Adicione uma nova tarefa"
               value={newTask}
               onChange={handleNewTaskChange}
             />
@@ -95,18 +95,29 @@ function App() {
                 finishedTask={doneTask.length}
               />
             </header>
-            <ul>
-              {task.map((item) => {
-                return (
-                  <Task
-                    key={item}
-                    content={item}
-                    onDeleteTask={handleDeleteTask}
-                    onDoneTask={handleDoneTask}
-                  />
-                );
-              })}
-            </ul>
+
+            {task.length === 0 ? (
+              <div className={style.emptyTask}>
+                <Clipboard size={56} />
+                <div className={style.emptyTextDescription}>
+                  <strong>Você ainda não tem tarefas cadastradas</strong>
+                  <p>Crie tarefas e organize seus itens a fazer</p>
+                </div>
+              </div>
+            ) : (
+              <ul>
+                {task.map((item) => {
+                  return (
+                    <Task
+                      key={item}
+                      content={item}
+                      onDeleteTask={handleDeleteTask}
+                      onDoneTask={handleDoneTask}
+                    />
+                  );
+                })}
+              </ul>
+            )}
           </div>
         </div>
       </main>
