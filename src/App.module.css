@@ -95,6 +95,21 @@ form button span {
   margin-bottom: 1.5rem;
 }
 
-.contentTasks article + article {
+.contentTasks ul {
+  max-height: 35rem;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.contentTasks ul::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+.contentTasks ul::-webkit-scrollbar-thumb {
+  background-color: var(--GRAY-500);
+  border-radius: 10px;
+}
+
+.contentTasks li + li {
   margin-top: 0.75rem;
 }

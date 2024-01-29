@@ -93,8 +93,7 @@ function App() {
                 finishedTask={doneTask.length}
               />
             </header>
-
-            <section>
+            <ul>
               {task.map((item) => {
                 return (
                   <Task
@@ -105,7 +104,7 @@ function App() {
                   />
                 );
               })}
-            </section>
+            </ul>
           </div>
         </div>
       </main>
