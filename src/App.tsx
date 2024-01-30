@@ -29,7 +29,7 @@ function App() {
 
     for (const item of task) {
       if (item === newTask) {
-        return alert("A tarefa que está cadastrando já existe.");
+        return alertWarn("A tarefa que está cadastrando já existe.");
       }
     }
 
@@ -80,6 +80,17 @@ function App() {
 
   function alertSuccess(message: string) {
     toast.success(message, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      theme: "dark",
+    });
+  }
+
+  function alertWarn(message: string) {
+    toast.warning(message, {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
