@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./global.css";
 import style from "./App.module.css";
 import Rocket from "./assets/rocket.svg";
@@ -18,6 +20,13 @@ function App() {
   function handleNewTask(event: FormEvent) {
     event.preventDefault();
 
+    const verifyIfExistsTaskWrite = newTask.length === 0;
+
+    if (verifyIfExistsTaskWrite) {
+      alertError("Você precisa preencher o campo para adicionar uma tarefa.");
+      return;
+    }
+
     for (const item of task) {
       if (item === newTask) {
         return alert("A tarefa que está cadastrando já existe.");
@@ -26,6 +35,7 @@ function App() {
 
     setTask([...task, newTask]);
     setNewTask("");
+    alertSuccess("Tarefa adicionada com sucesso.");
   }
 
   function handleDeleteTask(item: string) {
@@ -38,6 +48,7 @@ function App() {
     });
 
     setDoneTask(newFinishedTasks);
+    alertSuccess("Tarefa excluída com sucesso.");
   }
 
   function handleDoneTask(taskFinished: string) {
@@ -54,6 +65,28 @@ function App() {
     });
 
     setDoneTask(newFinishedTasks);
+  }
+
+  function alertError(message: string) {
+    toast.error(message, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      theme: "dark",
+    });
+  }
+
+  function alertSuccess(message: string) {
+    toast.success(message, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      theme: "dark",
+    });
   }
 
   const numberOfTaskCreated = task.length;
@@ -82,10 +115,12 @@ function App() {
               value={newTask}
               onChange={handleNewTaskChange}
             />
+
             <button type="submit" onClick={handleNewTask}>
               <span>Criar</span>
               <PlusCircle size={22} weight="bold" />
             </button>
+            <ToastContainer />
           </form>
 
           <div className={style.contentTasks}>
