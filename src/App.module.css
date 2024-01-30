@@ -120,7 +120,7 @@ p {
 .contentTasks ul {
   max-height: 35rem;
   overflow-y: auto;
-  padding-right: 1rem;
+  padding-right: 0.4rem;
 }
 
 .contentTasks ul::-webkit-scrollbar {
