@@ -56,11 +56,20 @@
   left: 0.4375rem;
 }
 
+.checked {
+  color: var(--GRAY-300);
+  text-decoration: line-through;
+}
+
+.unChecked {
+  text-decoration: none;
+  color: var(--GRAY-100);
+}
+
 .taskContainer p {
   max-width: 90%;
   font-size: 0.875rem;
   line-height: 1.4;
-  color: var(--GRAY-100);
   flex: 1;
   word-wrap: break-word;
 }

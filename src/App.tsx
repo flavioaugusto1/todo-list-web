@@ -1,12 +1,12 @@
+import { useState, ChangeEvent, FormEvent } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { PlusCircle, Clipboard } from "@phosphor-icons/react";
 import "./global.css";
 import style from "./App.module.css";
 import Rocket from "./assets/rocket.svg";
-import { PlusCircle, Clipboard } from "@phosphor-icons/react";
 import { StatusTask } from "./components/StatusTask";
 import { Task } from "./components/Task";
-import { useState, ChangeEvent, FormEvent } from "react";
 
 function App() {
   const [newTask, setNewTask] = useState<string>("");
